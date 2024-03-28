@@ -4,17 +4,15 @@ import {
     Text,
     View
 } from 'react-native';
-import NavBar from '../../components/Navbar.jsx/NavBar';
-import ProductCards from '../../components/ProductCards/ProductCards';
 
-function Home() {
+function ProxVencer() {
 
 
 
   return (
     <View style={styles.container}>
-      <NavBar/>
-    <ProductCards/>
+  <Text style={styles.label}>ProxVencer</Text>
+        
     </View>
   );
 }
@@ -30,4 +28,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Home;
+export default ProxVencer;

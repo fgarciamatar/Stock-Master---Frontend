@@ -8,13 +8,25 @@ import {StyleSheet} from 'react-native';
 
 import Welcom from './screeens/Welcom/Welcom';
 import Login from './screeens/Login/Login';
+import PasswordRecovery from './screeens/PasswordRecovery/PasswordRecovery';
 import SignUp from './screeens/SignUp/SignUp';
 import Home from "./screeens/Home/Home"
+import SelectPerfil from './screeens/SelectPerfil/SelectPerfil';
+import ProxVencer from './screeens/ProxVencer/ProxVencer';
+import SinStock from './screeens/SinStock/SinStock';
+import BarCodeScanner from "./screeens/BarCodeScanner/BarCodeScanner"
+
+
 export type RootStackParamList = {
   Welcom: undefined;
   Login: undefined;
   SignUp: undefined;
+  PasswordRecovery: undefined;
+  SelectPerfil: undefined;
   Home: undefined;
+  ProxVencer: undefined;
+  SinStock: undefined;
+  BarCodeScanner: undefined;
 };
 export type ScreenProp = StackNavigationProp<RootStackParamList>;
 const Stack = createStackNavigator<RootStackParamList>();
@@ -26,7 +38,12 @@ function Tabs() {
       <Stack.Screen options={{ headerShown: false }} name="Welcom" component={Welcom} />
      <Stack.Screen  name="Login" component={Login} />
      <Stack.Screen  name="SignUp" component={SignUp} />
+     <Stack.Screen  name="PasswordRecovery" component={PasswordRecovery} />
+     <Stack.Screen  name="SelectPerfil" component={SelectPerfil} />
      <Stack.Screen  name="Home" component={Home} />
+     <Stack.Screen  name="ProxVencer" component={ProxVencer} />
+     <Stack.Screen  name="SinStock" component={SinStock} />
+     <Stack.Screen  name="BarCodeScanner" component={BarCodeScanner} />
    </Stack.Navigator>
   );
 }

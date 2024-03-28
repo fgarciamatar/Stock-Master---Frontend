@@ -21,8 +21,11 @@ function Login() {
   const handleSignUp = () => {
     navigation.navigate('SignUp');
   };
-  const handleHome = () => {
-    navigation.navigate('Home');
+  const handleSelectPerfil = () => {
+    navigation.navigate('SelectPerfil');
+  };
+  const handlePasswordRecovery = () => {
+    navigation.navigate('PasswordRecovery');
   };
 
 
@@ -55,12 +58,12 @@ function Login() {
           </TouchableOpacity>
         </View>
         </View>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={handlePasswordRecovery}>
           <Text style={styles.textPassword}>Olvide Mi contraseña</Text>
         </TouchableOpacity>
       </View>
      
-        <TouchableOpacity  style={styles.button} onPress={handleHome}>
+        <TouchableOpacity  style={styles.button} onPress={handleSelectPerfil}>
           <Text style={styles.textButton}>Inicia sesión</Text>
         </TouchableOpacity>
   
