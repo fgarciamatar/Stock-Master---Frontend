@@ -18,23 +18,25 @@ const handleFilters = () => {
 
   return (
     <View style={styles.container}>
+       <View style={styles.SearchBarContainer}>
       <SearchBar />
+      </View>
       <TouchableOpacity onPress={handleFilters}>
       <Image
             source={filter}
-            style={styles.image}
+            style={styles.filter}
           />
       </TouchableOpacity>
       <TouchableOpacity onPress={handleBarCodeScanner}>
       <Image
             source={scanner}
-            style={styles.image}
+            style={styles.scanner}
           />
       </TouchableOpacity>
       <View >
       <Image
             source={exitProfile}
-            style={styles.image}
+            style={styles.profile}
           />
       </View>
     </View>
@@ -43,18 +45,37 @@ const handleFilters = () => {
 
 const styles = StyleSheet.create({
   container:{
-    marginTop:0,
+    margin:10,
     flexDirection: 'row', // Cambiado de 'column' a 'row'
     justifyContent: 'space-between', // Añadido para espaciar los botones automáticamente
     paddingHorizontal: 20, // Añadido para agregar espacio horizontal
     marginRight:5,
     backgroundColor: '#9E9E9E',
+    borderTopLeftRadius:20,
+    borderBottomRightRadius:20,
   },
-  image: {
+  SearchBarContainer:{
+    width: '55%', // ajusta el ancho según lo necesites
+    margin: 0,
+    padding: 6,
+  },
+  scanner: {
     margin:10,
-    width: 45,
-    height: 45,
-    alignSelf: 'center'
+    width: 37,
+    height: 37,
+    alignSelf: 'center',
+  },
+  filter:{
+    margin:10,
+    width: 37,
+    height: 37,
+    alignSelf: 'center',
+  },
+  profile:{
+    margin:10,
+    width: 37,
+    height: 37,
+    alignSelf: 'center',
   },
 });
 

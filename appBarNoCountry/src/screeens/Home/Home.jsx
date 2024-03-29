@@ -19,12 +19,10 @@ function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between', // Distribuye los elementos de manera equitativa
-    alignItems: 'center',
-    padding: 20,
     margin:0,
   },
   NavBar: {
+    backgroundColor: "#424DE3",
     marginTop:0,
     marginBottom: 20, // Espacio entre NavBar y ProductCards
   },
