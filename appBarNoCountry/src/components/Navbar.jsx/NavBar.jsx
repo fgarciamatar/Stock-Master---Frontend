@@ -15,6 +15,9 @@ const handleFilters = () => {
   const handleBarCodeScanner = () => {
     navigation.navigate("BarCodeScanner")
   }
+  const handleProfile = () => {
+    navigation.navigate("SelectPerfil");
+  }
 
   return (
     <View style={styles.container}>
@@ -32,13 +35,15 @@ const handleFilters = () => {
             source={scanner}
             style={styles.scanner}
           />
-      </TouchableOpacity>
+      </TouchableOpacity >
+      <TouchableOpacity onPress={handleProfile}>
       <View >
       <Image
             source={exitProfile}
             style={styles.profile}
           />
       </View>
+      </TouchableOpacity >
     </View>
   );
 }
