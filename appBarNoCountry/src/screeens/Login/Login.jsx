@@ -36,19 +36,19 @@ function Login() {
 
   return (
     <View style={styles.container}>
-  
+      <Text style={styles.TextInicial}>inicia sesion en tu cuenta o registrate para comenzar</Text>
       <View style={styles.formContainer}>
-        <Text style={styles.label}>Usuario</Text>
+        <Text style={styles.label}>Usuario:</Text>
         <TextInput
           style={styles.input}
           value={userName}
           onChangeText={setUserName}
         />
-      <View style={styles.formContainer}>
-        <Text style={styles.label}>Password</Text>
+    
+        <Text style={styles.label}>Password:</Text>
         <View style={styles.passwordContainer}>
           <TextInput
-            style={styles.passwordInput}
+            style={styles.input}
             value={password}
             onChangeText={setPassword}
             secureTextEntry={!showPassword} // Oculta la contraseña si showPassword es falso
@@ -57,124 +57,116 @@ function Login() {
             <Text style={styles.eyeIcon}>{showPassword ? '👁️' : '👁️'}</Text>
           </TouchableOpacity>
         </View>
-        </View>
+     
         <TouchableOpacity onPress={handlePasswordRecovery}>
           <Text style={styles.textPassword}>Olvide Mi contraseña</Text>
         </TouchableOpacity>
-      </View>
-     
-        <TouchableOpacity  style={styles.button} onPress={handleSelectPerfil}>
-          <Text style={styles.textButton}>Inicia sesión</Text>
-        </TouchableOpacity>
-  
 
-      <View style={styles.createCountContainer}>
+        <View style={styles.createCountContainer}>
         <Text>¿Aún no tienes una cuenta?</Text>
         <TouchableOpacity onPress={handleSignUp}>
           <Text style={styles.createCount}>Registrarme</Text>
         </TouchableOpacity>
       </View>
+
+      <TouchableOpacity  style={styles.button} onPress={handleSelectPerfil}>
+          <Text style={styles.textButton}>Inicia sesión</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.textEnd}>Stock Master</Text>
+      </View>
+     
+
+    
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  //#5271C4 fondo referencia
+  //#BB94E3
   container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    padding: 20,
-  },
-  image: {
-    width: 174,
-    height: 163.8,
-    padding: 20,
-  },
-  label: {
-    fontSize: 16,
-    color: '#0305C5',
-    marginBottom:4
-
+    flex: 1,
+    backgroundColor: '#BB94E3', // Fondo púrpura para el contenedor principal
   },
   formContainer: {
-    display: 'flex',
-    gap: 0,
-    marginTop: 30,
+    
+    padding: 20,
+    backgroundColor: '#5271C4', // Fondo blanco para los campos de entrada
+    borderTopLeftRadius:100,
+  },
+  
+  TextInicial:{
+    marginTop:10,
+    color: '#5271C4', // Texto púrpura para las etiquetas
+    fontWeight: 'bold', // Negrita para las etiquetas
+    marginBottom: 20, // Espacio debajo de las etiquetas
+  },
+  
+  label: {
+    margin:20,
+    color: '#ffff', // Texto púrpura para las etiquetas
+    fontWeight: 'bold', // Negrita para las etiquetas
+    marginBottom: 8, // Espacio debajo de las etiquetas
   },
   input: {
-    borderRadius: 8,
-    backgroundColor: '#D7D7D7',
-    paddingHorizontal: 10,
-    paddingVertical: 0,
-    marginVertical: 0,
-    width: 288,
-    height: 35,
+    borderColor: '#ffff', // Borde púrpura para los TextInput
+    backgroundColor: '#ffff',
+    borderWidth: 1, // Ancho del borde para los TextInput
+    borderRadius: 10, // Bordes redondeados para los TextInput
+    padding: 5, // Relleno para los TextInput
+    marginBottom: 10, // Espacio debajo de los TextInput
   },
-  passwordContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 0,
-    borderBottomColor: '#000',
-  },
+  // passwordContainer: {
+  //   flexDirection: 'row', // Alineación horizontal para la contraseña y el ícono
+  //   alignItems: 'center', // Alineación vertical para la contraseña y el ícono
+  //   borderColor: '#7D3C98', // Borde púrpura para el contenedor de la contraseña
+  //   borderWidth: 1, // Ancho del borde para el contenedor de la contraseña
+  //   borderRadius: 5, // Bordes redondeados para el contenedor de la contraseña
+  //   padding: 10, // Relleno para el contenedor de la contraseña
+  // },
   passwordInput: {
-    flex: 1,
-    height: 35,
-    paddingHorizontal: 10,
-    paddingVertical: 0,
-    backgroundColor: '#D7D7D7',
-    borderRadius: 8,
-    borderTopRightRadius:0 ,
-    borderBottomRightRadius: 0
-  },
-  textTitle: {
-    fontSize: 30,
-    marginBottom: 10,
-    textAlign: 'left',
-    padding: 10,
-  },
-  textButton: {
-    textAlign: 'center',
-    color: '#4215D0',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  textPassword: {
-    marginTop: 7,
-    marginRight:-5,
-    color: '#3F86FC',
-    textAlign: 'right',
-    fontWeight: '400',
-    fontFamily: 'Montserrat',
-  },
-  button: {
-    width: 186,
-    borderRadius: 5,
-    padding: 10,
-    backgroundColor: '#F0BBFD',
-    borderWidth: 1,
-    borderColor: '#FA84FC',
-    marginVertical: 30,
-  },
-  createCountContainer: {
-    fontFamily: 'Roboto',
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 5,
-  },
-  createCount: {
-    color: '#3F86FC',
+    flex: 1, // Ocupa todo el espacio disponible
   },
   eyeIcon: {
-    fontSize: 15,
-    paddingHorizontal: 10,
-    height: 35,
-    paddingVertical: 7,
-    backgroundColor: '#D7D7D7',
-    borderRadius: 8,
-    borderTopLeftRadius: 0,
-    borderBottomLeftRadius: 0,
+    marginLeft: 10, // Espacio a la izquierda del ícono del ojo
   },
+  textPassword: {
+    color: '#ffff', // Texto púrpura para 'Olvide Mi contraseña'
+    textAlign: 'right', // Alineación a la derecha para 'Olvide Mi contraseña'
+    marginBottom: 20, // Espacio debajo de 'Olvide Mi contraseña'
+  },
+  button: {
+    backgroundColor: '#5991C4',
+    borderColor: '#ffff', 
+     borderWidth: 2, // Ancho del borde
+    padding: 10, // Relleno para el botón
+    borderRadius: 10, // Bordes redondeados para el botón
+    alignItems: 'center', // Centrado del texto en el botón
+    marginHorizontal: 80, // Margen horizontal para el botón
+  },
+  textButton: {
+    color: 'white', // Texto blanco para el botón
+    fontWeight: 'bold', // Negrita para el texto del botón
+  },
+  createCountContainer: {
+    flexDirection: 'row', // Alineación horizontal para '¿Aún no tienes una cuenta?' y 'Registrarme'
+    justifyContent: 'center', // Centrado horizontal para el contenedor
+    marginTop: 20, // Espacio arriba del contenedor
+  },
+  createCount: {
+    paddingBottom:20,
+    color: '#1D3C98', // Texto púrpura para 'Registrarme'
+    fontWeight: 'bold', // Negrita para 'Registrarme'
+    marginLeft: 5, // Espacio a la izquierda de 'Registrarme'
+  },
+  textEnd:{
+    marginTop:50,
+    color: '#FFFF', // Texto púrpura para 'Registrarme'
+    fontWeight: 'bold', // Negrita para 'Registrarme'
+    alignItems: 'center', // Centrado del texto en el botón
+  }
 });
+
 
 export default Login;
