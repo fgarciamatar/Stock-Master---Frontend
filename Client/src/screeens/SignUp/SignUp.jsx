@@ -12,7 +12,6 @@ import {
 import {Spinner} from 'tamagui';
 
 function SignUp() {
-  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('');
@@ -24,148 +23,118 @@ function SignUp() {
   };
 
   return (
-    <View style={styles.signUpContainer}>
-      <ScrollView>
-        <View style={styles.acountContainer}>
-          <Text style={styles.information}>
-            Completa los campos para crear una cuenta
-          </Text>
+    <View style={styles.container}>
+      <Text style={styles.TextInicial}>
+        Completa con tus datos para registrarte
+      </Text>
 
-          <View style={styles.formContainer}>
-            <Text style={styles.label}>Nombre del Bar/Restaurante</Text>
-            <TextInput
-              style={styles.input}
-              value={name}
-              onChangeText={setName}
-            />
+      <View style={styles.formContainer}>
+        <Text style={styles.label}>Email</Text>
+        <TextInput style={styles.input} value={email} onChangeText={setEmail} />
+        <Text style={styles.label}>Nombre de usuario</Text>
+        <TextInput
+          style={styles.input}
+          value={userName}
+          onChangeText={setUserName}
+        />
 
-            <Text style={styles.label}>Nombre de usuario</Text>
-            <TextInput
-              style={styles.input}
-              value={userName}
-              onChangeText={setUserName}
-            />
-
-            <Text style={styles.label}>Email</Text>
-            <TextInput
-              style={styles.input}
-              value={email}
-              onChangeText={setEmail}
-            />
-
-            <Text style={styles.label}>Contraseña</Text>
-            <TextInput
-              style={styles.input}
-              value={password}
-              onChangeText={setPassword}
-            />
-          </View>
-
-          <View style={styles.sendContainer}>
-            <TouchableOpacity>
-              <Text>Regístrame</Text>
-            </TouchableOpacity>
-
-            <View style={styles.logInContainer}>
-              <Text>¿Ya tienes una cuenta?</Text>
-              <TouchableOpacity onPress={handleLogin}>
-                <Text style={styles.textLogIn}>Inicia sesión</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </ScrollView>
+        <Text style={styles.label}>Contraseña</Text>
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={setPassword}
+        />
+       <TouchableOpacity  style={styles.button} onPress={handleLogin}>
+          <Text style={styles.textButton}>Registrarme</Text>
+        </TouchableOpacity>
+        <View style={styles.createCountContainer}>
+        <Text style={styles.textPassword}>¿Aún no tienes una cuenta?</Text>
+        <TouchableOpacity onPress={handleLogin}>
+          <Text style={styles.createCount}>Iniciar Sesion</Text>
+        </TouchableOpacity>
+      </View>
+        <Text style={styles.textEnd}>STOCK MASTER</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  signUpContainer: {
-    width: '100%',
-    display: 'flex',
+  //#215596 fondo referencia
+  //#BB94E3
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-  },
-  acountContainer: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 30,
-    padding: 30,
-    marginTop: 20,
-  },
-  image: {
-    width: 70,
-    height: 70,
+    backgroundColor: '#215596', // Fondo púrpura para el contenedor principal
   },
   formContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    padding: 0,
+    padding: 30,
+    backgroundColor: '#6F9ED7', // Fondo blanco para los campos de entrada
+    borderTopLeftRadius: 100,
+    height: '100%',
+  },
+  TextInicial: {
+    fontFamily: 'Montserrat',
+    textAlign: 'center',
+    fontSize: 20,
+    margin: 12,
+    marginTop: 90,
+    height: '15%',
+    color: '#E6E6E6', // Texto púrpura para las etiquetas
+    fontWeight: 'bold', // Negrita para las etiquetas
+    marginBottom: 0, // Espacio debajo de las etiquetas
+  },
+
+  label: {
+    marginTop: 25,
+    margin: 20,
+    color: '#ffff', // Texto púrpura para las etiquetas
+    fontWeight: 'bold', // Negrita para las etiquetas
+    marginBottom: 0, // Espacio debajo de las etiquetas
   },
   input: {
-    borderRadius: 8,
-    backgroundColor: '#D7D7D7',
-    paddingHorizontal: 10,
-    paddingVertical: 0,
-    marginVertical: 0,
-    width: 288,
-    height: 35,
-    marginBottom: 15,
-  },
-  label: {
-    fontSize: 16,
-    color: '#0305C5',
-    marginBottom: -6,
-  },
-  sendContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: 20,
-    alignItems: 'center',
+    borderColor: '#ffff', // Borde púrpura para los TextInput
+    backgroundColor: '#ffff',
+    borderWidth: 1, // Ancho del borde para los TextInput
+    borderRadius: 10, // Bordes redondeados para los TextInput
+    padding: 5, // Relleno para los TextInput
+    marginBottom: 10, // Espacio debajo de los TextInput
   },
   button: {
-    width: 186,
-    borderRadius: 5,
-    padding: 10,
-    backgroundColor: '#D0BBFD',
-    borderWidth: 1,
-    borderColor: '#AA84FC',
-    marginTop: 2,
+    marginTop: 20,
     marginBottom: 10,
-  },
-  disabledButton: {
-    backgroundColor: '#ccc',
-    color: '#eee',
-    borderColor: '#aaa',
+    backgroundColor: '#6F9ED7',
+    borderColor: '#ffff',
+    borderWidth: 2, // Ancho del borde
+    padding: 10, // Relleno para el botón
+    borderRadius: 10, // Bordes redondeados para el botón
+    alignItems: 'center', // Centrado del texto en el botón
+    marginHorizontal: 80, // Margen horizontal para el botón
   },
   textButton: {
+    color: 'white', // Texto blanco para el botón
+    fontWeight: 'bold', // Negrita para el texto del botón
+  },
+  createCountContainer: {
+    flexDirection: 'row', // Alineación horizontal para '¿Aún no tienes una cuenta?' y 'Registrarme'
+    justifyContent: 'center', // Centrado horizontal para el contenedor
+    marginTop: 20, // Espacio arriba del contenedor
+  },
+  createCount: {
+    paddingBottom: 20,
+    color: '#1D3C98', // Texto púrpura para 'Registrarme'
+    fontWeight: 'bold', // Negrita para 'Registrarme'
+    marginLeft: 5, // Espacio a la izquierda de 'Registrarme'
+  },
+  textEnd: {
+    marginTop: 20,
+    fontSize: 20,
+    color: '#FFFF', // Texto púrpura para 'Registrarme'
+    fontWeight: 'bold', // Negrita para 'Registrarme'
+    alignItems: 'center', // Centrado del texto en el botón
+    fontFamily: 'Montserrat',
     textAlign: 'center',
-    color: '#4505D0',
     fontWeight: 'bold',
-    fontSize: 16,
-  },
-  logInContainer: {
-    fontFamily: 'Roboto',
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 5,
-  },
-  textLogIn: {
-    color: '#3F86FC',
-  },
-  errorText: {
-    color: 'red',
-    marginTop: -20,
-  },
-  information: {
-    color: '#8586FF',
-    fontSize: 15,
-    marginVertical: 10,
+    opacity: 0.5,
   },
 });
-
 export default SignUp;
