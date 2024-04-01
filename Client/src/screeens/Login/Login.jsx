@@ -83,7 +83,7 @@ function Login() {
 }
 
 const styles = StyleSheet.create({
-  //#5271C4 fondo referencia
+  //#215596 fondo referencia
   //#BB94E3
   container: {
     flex: 1,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   formContainer: {
     
     padding: 20,
-    backgroundColor: '#5271C4', // Fondo blanco para los campos de entrada
+    backgroundColor: '#215596', // Fondo blanco para los campos de entrada
     borderTopLeftRadius:100,
   },
   
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     marginBottom: 20, // Espacio debajo de 'Olvide Mi contraseña'
   },
   button: {
-    backgroundColor: '#5991C4',
+    backgroundColor: '#215596',
     borderColor: '#ffff', 
      borderWidth: 2, // Ancho del borde
     padding: 10, // Relleno para el botón
