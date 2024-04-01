@@ -5,8 +5,10 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
+    Image
 } from 'react-native';
+import check from "./../../assets/check.png"
 
 function Welcom() {
     const navigation = useNavigation(); // Instanciación de useNavigation
@@ -18,10 +20,13 @@ function Welcom() {
 
   return (
     <View style={styles.welcomContainer}>
-      <Text style={styles.titleWelcom}>Bienvenido a</Text>
-      <Text style={styles.textBar}>Stock Master</Text>
+      <Text style={styles.titleWelcom}>Bienvenid@ a</Text>
+      <Text style={styles.textBar}>STOCK MASTER</Text>
       <View style={styles.imageContainer}>
-       <Text>STOCKMASTER</Text>
+      <Image
+            source={check}
+            style={styles.image}
+          />
       </View>
 
       <View style={styles.continueContainer}>
@@ -47,36 +52,25 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-
-    backgroundColor: '#5271C4 ',
     height: '100%',
-    paddingHorizontal: 10,
-    paddingVertical:0
+    backgroundColor:"#215596"
   },
   titleWelcom: {
     fontSize: 30,
     textAlign: 'center',
     color: 'white',
     fontFamily: 'Montserrat',
-    fontWeight: 'bold',
-    paddingTop: 0,
-    
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: {width: -1, height: 4},
-    textShadowRadius: 6
+   color:"#E6E6E6"
 
   },
   textBar: {
-    color: '#EBB426',
+    color:"#6F9ED7",
     fontSize: 30,
     fontFamily: 'Montserrat',
     textAlign: 'center',
     fontWeight: 'bold',
-
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: {width: -1, height: 4},
-    textShadowRadius: 6
   },
+  
   imageContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -84,8 +78,8 @@ const styles = StyleSheet.create({
     padding: 25,
   },
   image: {
-    width: 268,
-    height: 218,
+    width: 80,
+    height: 80,
   },
   continueContainer:{
     display: "flex",
@@ -94,7 +88,8 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   privacityText: {
-    color: '#fff',
+    color: '#E6E6E6',
+    fontFamily: 'Montserrat',
     textAlign: 'center',
     fontSize: 13,
     padding: 20,
@@ -102,17 +97,17 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     padding: 10,
-    backgroundColor: '#D0BBFD',
+    backgroundColor: '#215596',
     width: 205,
     borderRadius: 10,
     maxWidth: 190,
     maxHeight: 50,
     borderWidth: 1,
-    borderColor: '#AA84FC',
+    borderColor: '#E6E6E6',
   },
   textButton:{
     fontWeight: "400",
-    color: "#4505D0",
+    color: "#E6E6E6",
     textAlign: "center",
     fontSize: 14,
     paddingTop:0,
@@ -125,7 +120,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   fromText: {
-    color: "#fff",
+    color: "#E6E6E6",
     fontSize: 20,
     fontWeight: "bold",
     fontFamily: "Montserrat",

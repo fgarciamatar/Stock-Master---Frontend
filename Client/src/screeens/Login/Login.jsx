@@ -36,7 +36,7 @@ function Login() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.TextInicial}>inicia sesion en tu cuenta o registrate para comenzar</Text>
+      <Text style={styles.TextInicial}>Inicia sesion en tu cuenta o registrate para comenzar</Text>
       <View style={styles.formContainer}>
         <Text style={styles.label}>Usuario:</Text>
         <TextInput
@@ -63,7 +63,7 @@ function Login() {
         </TouchableOpacity>
 
         <View style={styles.createCountContainer}>
-        <Text>¿Aún no tienes una cuenta?</Text>
+        <Text style={styles.textPassword}>¿Aún no tienes una cuenta?</Text>
         <TouchableOpacity onPress={handleSignUp}>
           <Text style={styles.createCount}>Registrarme</Text>
         </TouchableOpacity>
@@ -73,7 +73,7 @@ function Login() {
           <Text style={styles.textButton}>Inicia sesión</Text>
         </TouchableOpacity>
 
-        <Text style={styles.textEnd}>Stock Master</Text>
+        <Text style={styles.textEnd}>STOCK MASTER</Text>
       </View>
      
 
@@ -87,20 +87,24 @@ const styles = StyleSheet.create({
   //#BB94E3
   container: {
     flex: 1,
-    backgroundColor: '#BB94E3', // Fondo púrpura para el contenedor principal
+    backgroundColor: '#215596', // Fondo púrpura para el contenedor principal
   },
   formContainer: {
-    
-    padding: 20,
-    backgroundColor: '#215596', // Fondo blanco para los campos de entrada
+    padding: 30,
+    backgroundColor: '#6F9ED7', // Fondo blanco para los campos de entrada
     borderTopLeftRadius:100,
+    height: '100%',
   },
-  
   TextInicial:{
-    marginTop:10,
-    color: '#5271C4', // Texto púrpura para las etiquetas
+    fontFamily: 'Montserrat',
+    textAlign: 'center',
+    fontSize:20,
+    margin:12,
+    marginTop:60,
+    height: '15%',
+    color: '#E6E6E6', // Texto púrpura para las etiquetas
     fontWeight: 'bold', // Negrita para las etiquetas
-    marginBottom: 20, // Espacio debajo de las etiquetas
+    marginBottom: 0, // Espacio debajo de las etiquetas
   },
   
   label: {
@@ -137,7 +141,7 @@ const styles = StyleSheet.create({
     marginBottom: 20, // Espacio debajo de 'Olvide Mi contraseña'
   },
   button: {
-    backgroundColor: '#215596',
+    backgroundColor: '#6F9ED7',
     borderColor: '#ffff', 
      borderWidth: 2, // Ancho del borde
     padding: 10, // Relleno para el botón
@@ -162,10 +166,16 @@ const styles = StyleSheet.create({
   },
   textEnd:{
     marginTop:50,
+    fontSize:20,
     color: '#FFFF', // Texto púrpura para 'Registrarme'
     fontWeight: 'bold', // Negrita para 'Registrarme'
     alignItems: 'center', // Centrado del texto en el botón
+    fontFamily: 'Montserrat',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    opacity: 0.5,
   }
+
 });
 
 
