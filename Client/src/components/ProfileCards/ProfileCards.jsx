@@ -1,91 +1,86 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { View, YStack } from 'tamagui';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View } from 'tamagui';
 import profile from "./../../assets/profile.png";
+import lock from "./../../assets/lock.png";
+import Profiles from "./../../utils/Profiles";
 
 function ProfileCards() {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   const handleHome = () => {
     navigation.navigate('Home');
-  }
+  };
 
-  
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={handleHome} style={styles.cardContainer}>
-        <View>
+    <ScrollView contentContainerStyle={styles.scrollView}>
+      {Profiles.map((usuario, index) => (
+        <TouchableOpacity key={index} onPress={handleHome} style={styles.cardContent}>
           <Image
             style={styles.image}
             source={profile}
           />
-          <YStack
-            gap="$1"
-            justifyContent="center"
-            alignItems="center"
-            padding="$2">
-            <Text style={[styles.titleName]}>Francisco</Text>
-            <Text style={[styles.titleProfile]}>Administrador</Text>
-          </YStack>
-        </View>
-      </TouchableOpacity>
-    </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.titleName}>{usuario.name}</Text>
+            <Text style={styles.titleProfile}>{usuario.rol}</Text>
+          </View>
+          <View style={styles.lockAndArrowContainer}>
+            <Image
+              style={styles.imageLock}
+              source={lock}
+            />
+            <Text style={styles.arrowText}>&gt;&gt;</Text>
+          </View>
+        </TouchableOpacity>
+      ))}
+    </ScrollView>
   );
 }
 
-
 const styles = StyleSheet.create({
-  container: {
+  scrollView: {
     flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 20,
-    backgroundColor: '#EEEBEB',
-    width: '50%',
-    // Centrar elementos horizontalmente
   },
-  imageContainer: {
-    marginBottom: 10,
-    // Espacio entre la imagen y el texto
-  },
-  cardContainer: {
-    width: '80%',
-    display: 'flex',
-    borderRadius: 16,
-    justifyContent: 'center',
-    paddingVertical: 10,
+  cardContent: {
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    width: '100%',
+    marginTop: 7,
     backgroundColor: '#fff',
-    shadowOffset: {
-	    width: 0,
-	    height: 2,
-    },
-    shadowColor: 'black',
-    shadowRadius: 6,
-    shadowOpacity: 1,
-    elevation: 5,
-
+    borderTopLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    paddingVertical: 5,
   },
   image: {
-    width: 70,
-    height: 70,
-    alignSelf: 'center'
+    margin: 10,
+    width: 50,
+    height: 50,
+    alignSelf: 'center',
   },
-
+  imageLock: {
+    width: 25,
+    height: 25,
+    alignSelf: 'center',
+  },
   titleName: {
-    fontWeight: '400', // Texto en negrita
-    textAlign: 'center', // Centrar texto horizontalmente
-    fontSize: 16,
-    lineHeight: 25,
-    color:'#0305C5',
-    marginBottom:-8,
+    fontWeight: '400',
+    fontSize: 25,
+    color: '#6F9ED7',
+    marginBottom: -8,
+    textAlign: 'center',
   },
   titleProfile: {
-    fontSize: 10,
-    fontWeight:'400',
-    color: '#8586FF'
+    fontSize: 15,
+    fontWeight: '400',
+    color: '#6F9ED7',
+    textAlign: 'center',
+  },
+  arrowText: {
+    fontSize: 24,
+    color: '#888888',
   },
 });
-
 
 export default ProfileCards;
