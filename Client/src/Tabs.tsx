@@ -35,15 +35,15 @@ const Drawer = createDrawerNavigator();
 function Tabs() {
   return (
     <Stack.Navigator>
-      <Stack.Screen options={{ headerShown: false }} name="Welcom" component={Welcom} />
+      <Stack.Screen options={{ headerShown: false }}  name="Welcom" component={Welcom} />
      <Stack.Screen  name="Login" component={Login} />
      <Stack.Screen  name="SignUp" component={SignUp} />
      <Stack.Screen  name="PasswordRecovery" component={PasswordRecovery} />
-     <Stack.Screen  name="SelectPerfil" component={SelectPerfil} />
-     <Stack.Screen  name="Home" component={Home} />
-     <Stack.Screen  name="ProxVencer" component={ProxVencer} />
-     <Stack.Screen  name="SinStock" component={SinStock} />
-     <Stack.Screen  name="BarCodeScanner" component={BarCodeScanner} />
+     <Stack.Screen options={{ headerShown: false }} name="SelectPerfil" component={SelectPerfil} />
+     <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
+     <Stack.Screen options={{ headerShown: false }} name="ProxVencer" component={ProxVencer} />
+     <Stack.Screen options={{ headerShown: false }} name="SinStock" component={SinStock} />
+     <Stack.Screen options={{ headerShown: false }} name="BarCodeScanner" component={BarCodeScanner} />
    </Stack.Navigator>
   );
 }

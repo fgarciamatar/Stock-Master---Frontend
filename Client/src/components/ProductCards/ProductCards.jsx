@@ -6,12 +6,39 @@ import { ScrollView } from 'react-native-gesture-handler';
 function ProductCards() {
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.table}>
+       <View style={[styles.column, styles.border]}>
+       <Text style={styles.textColumn}>Code</Text>
+        </View>
+        <View style={[styles.column, styles.border]}>
+        <Text style={styles.textColumn}>Producto</Text>
+        </View>
+        <View style={[styles.column, styles.border]}>
+        <Text style={styles.textColumn}>Categoria</Text>
+        </View>
+        <View style={[styles.column, styles.border]}>
+        <Text style={styles.textColumn}>Stock</Text>
+        </View>
+        
+      </View>
       {Products !== undefined &&
         Products.map((producto, index) => (
-          <View key={index} style={styles.card}>
-            <Text style={styles.code}>{producto.code}</Text>
-            <Text style={styles.name}>{producto.nombre}</Text>
-          </View>
+          <View style={styles.table}>
+       <View style={[styles.column, styles.border]}>
+       <Text style={styles.textContent}>{producto.code}</Text>
+        </View>
+        <View style={[styles.column, styles.border]}>
+        <Text style={styles.textContent}>{producto.nombre}</Text>
+        </View>
+        <View style={[styles.column, styles.border]}>
+        <Text style={styles.textContent}>{producto.categoria}</Text>
+        </View>
+        <View style={[styles.column, styles.border]}>
+        <Text style={styles.textContent}>Stock</Text>
+        </View>
+        
+      </View>
+       
         ))}
     </ScrollView>
   );
@@ -20,28 +47,37 @@ function ProductCards() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5', // Color de fondo del ScrollView
+    backgroundColor: '#6F9ED7', // Color de fondo del ScrollView
+    width:"96%",
+    
   },
-  card: {
-    backgroundColor: 'white', // Color de fondo de cada tarjeta
-    borderRadius: 10, // Bordes redondeados
-    padding: 20, // Espaciado interno
-    marginVertical: 10, // Margen vertical entre tarjetas
-    marginHorizontal: 20, // Margen horizontal
-    elevation: 3, // Sombra en Android
-    shadowColor: '#000', // Color de la sombra en iOS
-    shadowOffset: { width: 0, height: 2 }, // Desplazamiento de la sombra en iOS
-    shadowOpacity: 0.1, // Opacidad de la sombra en iOS
-    shadowRadius: 1, // Radio de la sombra en iOS
+  table:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderColor: '#E6E6E6',
   },
-  code: {
+  column:{
+    margin:10,
+    width:80,
+    borderColor: '#E6E6E6',
+   
+  },
+  // border: {
+  //   borderWidth: 1,
+  //   borderColor: 'white',
+  // },
+  textColumn: {
     fontWeight: 'bold', // Negrita para el código
-    marginBottom: 5, // Margen inferior para el código
-  },
-  name: {
     fontSize: 16, // Tamaño de fuente para el nombre
-    color: '#333', // Color de texto para el nombre
+    color: '#ffff', // Color de texto para el nombre
+   
   },
+
+  textContent: {
+    fontSize: 14, // Tamaño de fuente para el nombre
+    color: '#ffff', // Color de texto para el nombre
+  
+  }
 });
 
 export default ProductCards;

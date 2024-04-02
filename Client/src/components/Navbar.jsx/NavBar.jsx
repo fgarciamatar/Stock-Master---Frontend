@@ -6,6 +6,7 @@ import exitProfile from "./../../assets/exitProfile.png"
 import filter from "./../../assets/filter.png"
 import scanner from "./../../assets/scanner.png"
 
+
 function NavBar() {
 const navigation = useNavigation();
 
@@ -58,25 +59,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#9E9E9E',
     borderTopLeftRadius:20,
     borderBottomRightRadius:20,
+    height:70,
   },
   SearchBarContainer:{
-    width: '55%', // ajusta el ancho según lo necesites
+    marginTop:5,
+    width: '55%', 
     margin: 0,
     padding: 6,
   },
   scanner: {
+    marginTop:10,
     margin:10,
     width: 37,
     height: 37,
     alignSelf: 'center',
   },
   filter:{
+    marginTop:10,
     margin:10,
     width: 37,
     height: 37,
     alignSelf: 'center',
   },
   profile:{
+    marginTop:10,
     margin:10,
     width: 37,
     height: 37,
