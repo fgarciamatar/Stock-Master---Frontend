@@ -4,28 +4,39 @@ import {
     Text,
     View
 } from 'react-native';
+import NavBar from '../../components/Navbar.jsx/NavBar';
+import TabNavigator from "./../../components/TabNavigator/TabNavigator";
+import ProductProxVencer from './ProductProxVencer';
 
 function ProxVencer() {
-
-
-
   return (
     <View style={styles.container}>
-  <Text style={styles.label}>ProxVencer</Text>
-        
+     
+        <NavBar />
+
+      <View style={styles.Productos}>
+      <ProductProxVencer/>
+      </View>
+      <TabNavigator/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    justifyContent: 'center',
+    flex: 1,
+    margin:0,
+    backgroundColor: "#215596",
+  },
+  NavBar: {
+    marginTop:0,
+    marginBottom: 20, // Espacio entre NavBar y ProductCards
+  },
+  Productos: {
+    flex: 1, // Ocupa todo el espacio disponible
+    justifyContent: 'center', // Centra los elementos horizontalmente
     alignItems: 'center',
-    height: '100%',
-    padding: 20,
-  }
-
+  },
 });
 
 export default ProxVencer;

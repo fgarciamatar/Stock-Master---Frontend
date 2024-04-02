@@ -15,6 +15,7 @@ import SelectPerfil from './screeens/SelectPerfil/SelectPerfil';
 import ProxVencer from './screeens/ProxVencer/ProxVencer';
 import SinStock from './screeens/SinStock/SinStock';
 import BarCodeScanner from "./screeens/BarCodeScanner/BarCodeScanner"
+import ProfilePin from "./screeens/SelectPerfil/ProfilePin"
 
 
 export type RootStackParamList = {
@@ -27,6 +28,7 @@ export type RootStackParamList = {
   ProxVencer: undefined;
   SinStock: undefined;
   BarCodeScanner: undefined;
+  ProfilePin: undefined;
 };
 export type ScreenProp = StackNavigationProp<RootStackParamList>;
 const Stack = createStackNavigator<RootStackParamList>();
@@ -44,6 +46,8 @@ function Tabs() {
      <Stack.Screen options={{ headerShown: false }} name="ProxVencer" component={ProxVencer} />
      <Stack.Screen options={{ headerShown: false }} name="SinStock" component={SinStock} />
      <Stack.Screen options={{ headerShown: false }} name="BarCodeScanner" component={BarCodeScanner} />
+     <Stack.Screen options={{ headerShown: false }} name="ProfilePin" component={ProfilePin} />
+     
    </Stack.Navigator>
   );
 }

@@ -7,9 +7,7 @@ import TabNavigator from "./../../components/TabNavigator/TabNavigator"
 function Home() {
   return (
     <View style={styles.container}>
-     
         <NavBar />
-
       <View style={styles.Productos}>
         <ProductCards />
       </View>

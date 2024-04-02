@@ -8,14 +8,14 @@ import Profiles from "./../../utils/Profiles";
 
 function ProfileCards() {
   const navigation = useNavigation();
-  const handleHome = () => {
-    navigation.navigate('Home');
+  const handleProfilePin = () => {
+    navigation.navigate('ProfilePin');
   };
 
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
       {Profiles.map((usuario, index) => (
-        <TouchableOpacity key={index} onPress={handleHome} style={styles.cardContent}>
+        <TouchableOpacity key={index} onPress={handleProfilePin} style={styles.cardContent}>
           <Image
             style={styles.image}
             source={profile}
